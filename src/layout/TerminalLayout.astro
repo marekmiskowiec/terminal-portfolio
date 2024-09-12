@@ -1,0 +1,29 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <title>{title || 'Portfolio Terminal'}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <div class="macos-terminal">
+      <div class="terminal-header">
+        <div class="buttons">
+          <span class="close"></span>
+          <span class="minimize"></span>
+          <span class="maximize"></span>
+        </div>
+        <div class="terminal-title">Portfolio Terminal</div>
+      </div>
+      <div class="terminal-body">
+        <div id="terminal-content">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
