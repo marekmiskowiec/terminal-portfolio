@@ -1,0 +1,70 @@
+---
+import TerminalLayout from '../layouts/TerminalLayout.astro';
+
+const projects = [
+  {
+    name: "PNG to WEBP Converter",
+    description: "A project that converts PNG images to WEBP format using Python.",
+    technologies: ["Python", "Pillow"],
+    github: "https://github.com/yourusername/png-to-webp-converter"
+  },
+  {
+    name: "Astro Blog",
+    description: "A blog built using Astro for fast and efficient static site generation.",
+    technologies: ["Astro", "JavaScript"],
+    github: "https://github.com/yourusername/astro-blog"
+  },
+  {
+    name: "Hot Wheels Collection App",
+    description: "An app showcasing my Hot Wheels collection, built using Astro and JSON data.",
+    technologies: ["Astro", "JavaScript", "JSON"],
+    github: "https://github.com/yourusername/hotwheels-app"
+  }
+];
+---
+
+<TerminalLayout title="Projects">
+  <h2>My Projects</h2>
+  <p>Here are some of the projects I have worked on:</p>
+  
+  <div class="projects-list">
+    {projects.map(project => (
+      <div class="project-item">
+        <h3>{project.name}</h3>
+        <p>{project.description}</p>
+        <p><strong>Technologies:</strong> {project.technologies.join(", ")}</p>
+        <a href={project.github} target="_blank">View on GitHub</a>
+      </div>
+    ))}
+  </div>
+</TerminalLayout>
+
+
+<style>
+    .projects-list {
+  padding-left: 1rem;
+}
+
+.project-item {
+  margin-bottom: 1.5rem;
+}
+
+.project-item h3 {
+  color: #28c840; /* Zielony kolor terminala */
+  font-family: "Monaco", monospace;
+}
+
+.project-item p {
+  color: #fff;
+  font-family: "Monaco", monospace;
+}
+
+.project-item a {
+  color: #00aaff;
+  text-decoration: none;
+}
+
+.project-item a:hover {
+  text-decoration: underline;
+}
+</style>
