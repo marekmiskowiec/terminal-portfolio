@@ -1,0 +1,44 @@
+---
+import TerminalLayout from '../layouts/TerminalLayout.astro';
+
+const hobbies = [
+  { name: "Hot Wheels Collecting", description: "I have a collection of over 1000 models and I love creating digital projects related to my collection." },
+  { name: "Programming", description: "I enjoy working on various projects, from web development to data analysis, and constantly improving my skills." },
+  { name: "Gaming", description: "In my free time, I like to play strategy and simulation games." },
+];
+
+---
+
+<TerminalLayout title="Hobbies">
+  <h2>My Hobbies</h2>
+  <p>Here are some of my personal hobbies:</p>
+  
+  <div class="hobbies-list">
+    {hobbies.map(hobby => (
+      <div class="hobby-item">
+        <h3>{hobby.name}</h3>
+        <p>{hobby.description}</p>
+      </div>
+    ))}
+  </div>
+</TerminalLayout>
+
+<style>
+    .hobbies-list {
+  padding-left: 1rem;
+}
+
+.hobby-item {
+  margin-bottom: 1.5rem;
+}
+
+.hobby-item h3 {
+  color: #28c840; /* Zielony kolor terminala */
+  font-family: "Monaco", monospace;
+}
+
+.hobby-item p {
+  color: #fff;
+  font-family: "Monaco", monospace;
+}
+</style>

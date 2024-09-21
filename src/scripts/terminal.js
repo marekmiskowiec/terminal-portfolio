@@ -11,6 +11,15 @@ function executeCommand(command) {
     case "skills":
       window.location.href = "/skills";
       break;
+    case "education":
+      window.location.href = "/education";
+      break;
+    case "courses":
+      window.location.href = "/courses";
+      break;
+    case "hobbies":
+      window.location.href = "/hobbies";
+      break;
     case "contact":
       window.location.href = "/contact";
       break;
