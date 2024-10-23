@@ -1,48 +1,70 @@
 ---
-import TerminalLayout from '../layouts/TerminalLayout.astro';
+import TerminalLayout from "../layouts/TerminalLayout.astro";
 
 const education = [
   {
     degree: "Bachelor's Degree in Informatics and Econometrics",
     institution: "University Of Economics In Katowice",
     year: "2018 - 2023",
-    details: "Specialization in Data Analysis"
+    details: "Specialization in Data Analysis",
+  },
+  {
+    degree: "Postgraduate studies Back-end developer Python",
+    institution: "Wyższa Szkoła Kształcenia Zawodowego",
+    year: "2024 - 2025",
+    details: "Specialization in Django",
   },
 ];
 ---
 
 <TerminalLayout title="Education">
-  <h2>Education</h2>
-  <p>Below is my educational background:</p>
-  
   <div class="education-list">
-    {education.map(item => (
-      <div class="education-item">
-        <h3>{item.degree}</h3>
-        <p><strong>Institution:</strong> {item.institution}</p>
-        <p><strong>Year:</strong> {item.year}</p>
-        <p><strong>Details:</strong> {item.details}</p>
-      </div>
-    ))}
+    <h2 class="page-title">Education</h2>
+    {
+      education.map((item) => (
+        <div class="education-item">
+          <h3>{item.degree}</h3>
+          <p>
+            <strong>Institution:</strong> {item.institution}
+          </p>
+          <p>
+            <strong>Year:</strong> {item.year}
+          </p>
+          <p>
+            <strong>Details:</strong> {item.details}
+          </p>
+        </div>
+      ))
+    }
   </div>
 </TerminalLayout>
 
 <style>
+  .education-list {
+    padding-left: 1rem;
+  }
+
+  .education-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .education-item h3 {
+    color: #28c840; /* Terminal-style green */
+    font-family: "Monaco", monospace;
+  }
+
+  .education-item p {
+    color: #fff;
+    font-family: "Monaco", monospace;
+  }
+
+  @media (max-width: 600px) {
     .education-list {
-  padding-left: 1rem;
-}
+      font-size: 0.95rem;
 
-.education-item {
-  margin-bottom: 1.5rem;
-}
-
-.education-item h3 {
-  color: #28c840; /* Terminal-style green */
-  font-family: "Monaco", monospace;
-}
-
-.education-item p {
-  color: #fff;
-  font-family: "Monaco", monospace;
-}
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+  }
 </style>
