@@ -1,44 +1,47 @@
 ---
-import TerminalLayout from '../layouts/TerminalLayout.astro';
+import TerminalLayout from "../layouts/TerminalLayout.astro";
 
 const courses = [
-    { title: "Sanctions and Terrorism in Crypto", year: "2023-10" },
-  { title: "CodING Academy Python", year: "2021-04" },
-  { title: "GIIF AML&TF (30836/2021/E)", year: "2021-02" }
-
+  { title: "Sanctions and Terrorism in Crypto", year: "2023.10" },
+  { title: "Kodilla FullStack Developer", year: "2022.05 - 2023.03" },
+  { title: "ING AI Academy Python", year: "2021.10" },
+  { title: "CodING Academy Python", year: "2021.04" },
+  { title: "GIIF AML&TF (30836/2021/E)", year: "2021.02" },
 ];
 ---
 
 <TerminalLayout title="Courses">
-  <h2>Courses</h2>
-  <p>Below is a list of completed courses:</p>
-  
   <div class="courses-list">
-    {courses.map(course => (
-      <div class="course-item">
-        <h3>{course.title}</h3>
-        <p><strong>Year:</strong> {course.year}</p>
-      </div>
-    ))}
+    <h2>Completed Courses</h2>
+    {
+      courses.map((course) => (
+        <div class="course-item">
+          <h3>{course.title}</h3>
+          <p>
+            <strong>Year:</strong> {course.year}
+          </p>
+        </div>
+      ))
+    }
   </div>
 </TerminalLayout>
 
 <style>
-    .courses-list {
-  padding-left: 1rem;
-}
+  .courses-list {
+    padding-left: 1rem;
+  }
 
-.course-item {
-  margin-bottom: 1.5rem;
-}
+  .course-item {
+    margin-bottom: 1.5rem;
+  }
 
-.course-item h3 {
-  color: #28c840; /* Zielony kolor terminala */
-  font-family: "Monaco", monospace;
-}
+  .course-item h3 {
+    color: #28c840; /* Zielony kolor terminala */
+    font-family: "Monaco", monospace;
+  }
 
-.course-item p {
-  color: #fff;
-  font-family: "Monaco", monospace;
-}
+  .course-item p {
+    color: #fff;
+    font-family: "Monaco", monospace;
+  }
 </style>

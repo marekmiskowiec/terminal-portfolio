@@ -1,5 +1,5 @@
 ---
-import TerminalLayout from '../layouts/TerminalLayout.astro';
+import TerminalLayout from "../layouts/TerminalLayout.astro";
 
 const skills = {
   Languages: ["Python", "JavaScript", "HTML", "CSS"],
@@ -8,38 +8,38 @@ const skills = {
 ---
 
 <TerminalLayout title="Skills">
-  <h2>Skills</h2>
-  <p>Below are my technical skills:</p>
-  
   <div class="skills-list">
-    {Object.entries(skills).map(([category, items]) => (
-      <>
-        <h3>{category}</h3>
-        <ul>
-          {items.map(skill => (
-            <li>{skill}</li>
-          ))}
-        </ul>
-      </>
-    ))}
+    <h2>Skills</h2>
+    {
+      Object.entries(skills).map(([category, items]) => (
+        <>
+          <h3>{category}</h3>
+          <ul>
+            {items.map((skill) => (
+              <li>{skill}</li>
+            ))}
+          </ul>
+        </>
+      ))
+    }
   </div>
 </TerminalLayout>
 
 <style>
-    .skills-list h3 {
-  color: #28c840; /* Terminal-style green */
-  font-family: "Monaco", monospace;
-  margin-bottom: 0.5rem;
-}
+  .skills-list h3 {
+    color: #28c840; /* Terminal-style green */
+    font-family: "Monaco", monospace;
+    margin-bottom: 0.5rem;
+  }
 
-.skills-list ul {
-  list-style-type: none;
-  padding-left: 1rem;
-}
+  .skills-list ul {
+    list-style-type: none;
+    padding-left: 1rem;
+  }
 
-.skills-list li {
-  font-family: "Monaco", monospace;
-  color: #fff;
-  margin-bottom: 0.3rem;
-}
+  .skills-list li {
+    font-family: "Monaco", monospace;
+    color: #fff;
+    margin-bottom: 0.3rem;
+  }
 </style>

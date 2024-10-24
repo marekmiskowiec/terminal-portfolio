@@ -8,6 +8,9 @@ function executeCommand(command) {
     case "projects":
       window.location.href = "/projects";
       break;
+    case "experience":
+      window.location.href = "/experience";
+      break;
     case "skills":
       window.location.href = "/skills";
       break;

@@ -1,0 +1,106 @@
+---
+import TerminalLayout from "../layouts/TerminalLayout.astro";
+
+const education = [
+  {
+    position: "Sanctions Compliance Specialist",
+    institution: "Honeywell, Katowice",
+    year: "2018 - 2023",
+    details: "Sanctions",
+  },
+  {
+    position: "Alert handler",
+    company: "Bank Handlowy w Warszawie, Warsaw",
+    year: "2023.06 - 2023.08",
+    details:
+      "Assessing the legality of transactions and operations or financial solvency",
+  },
+  {
+    position: "Junior KYC/AML Officer",
+    company: "SOCIETE GENERALE S.A., Warsaw",
+    year: "2022.10 - 2023.04",
+    details: `
+              Cooperating with a Compliance team,
+              Creating and maintaining KYC records by obtaining information from internal and external sources,
+              Validating the information within KYC records and customer identification documents to ensure completion and accuracy,
+              Ensuring KYC records incorporate local regulatory requirements / global standards
+              `,
+  },
+  {
+    position: "KYC Analyst",
+    company: "ING Bank Śląski S.A., Katowice",
+    year: "2021.03 - 2021.12",
+    details: `Preparation, development, due diligence, and approval of the electronic
+Know Your Client (KYC) record (CDD&EDD)
+Cooperating with a Compliance team
+Creating and maintaining KYC records by obtaining information from
+internal and external sources
+Creating and maintaining KYC records by obtaining information from
+internal and external sources
+Validating the information within KYC records and customer identification
+documents to ensure completion and accuracy
+Ensuring KYC records incorporate local regulatory requirements / global
+standards`,
+  },
+  {
+    position: "Alert Handler",
+    company: "ING Bank Śląski S.A., Katowice",
+    year: "2020.06 - 2021.02",
+    details: `Investigated activities of institutions to enforce laws and regulations,
+              Assessing the legality of transactions and operations or financial solvency
+              `,
+  },
+];
+---
+
+<TerminalLayout title="Education">
+  <div class="education-list">
+    <h2 class="page-title">Experience</h2>
+    {
+      education.map((item) => (
+        <div class="education-item">
+          <h3>{item.position}</h3>
+          <p>
+            <strong>Company:</strong> {item.company}
+          </p>
+          <p>
+            <strong>Year:</strong> {item.year}
+          </p>
+          <p>
+            <strong>Details:</strong> {item.details}
+          </p>
+        </div>
+      ))
+    }
+  </div>
+</TerminalLayout>
+
+<style>
+  .education-list {
+    padding-left: 1rem;
+  }
+
+  .education-item {
+    margin-bottom: 1.5rem;
+  }
+
+  .education-item h3 {
+    color: #28c840; /* Terminal-style green */
+    font-family: "Monaco", monospace;
+  }
+
+  .education-item p {
+    color: #fff;
+    font-family: "Monaco", monospace;
+  }
+
+  @media (max-width: 600px) {
+    .education-list {
+      font-size: 0.95rem;
+
+      .page-title {
+        font-size: 2rem;
+      }
+    }
+  }
+</style>
